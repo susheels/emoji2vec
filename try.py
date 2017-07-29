@@ -18,10 +18,5 @@ for word in sentence_words:
 	vector = w2v[word]
 	wvecs.append(vector)
 
-
-
 for wvec in wvecs:
 	print(e2v.similar_by_vector(wvec,topn=2)
-				
-
-
