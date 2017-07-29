@@ -1,5 +1,6 @@
 import gensim.models as gsm
 import sklearn as sk
+import pickle 
 PATH_emoji2vec = "/home/susuresh/emoji2vec/pre-trained/emoji2vec.bin"
 PATH_word2vec = "/home/susuresh/Downloads/GoogleNews-vectors-negative300.bin.gz"
 
@@ -19,5 +20,9 @@ for word in sentence_words:
 		vector = w2v[word]
 		wvecs.append(vector)
 
+pred_emoji_list = []
 for wvec in wvecs:
-	print(e2v.similar_by_vector(wvec,topn=2))
+	pred_emoji_list.append(e2v.similar_by_vector(wvec,topn=2))
+
+with open('pred_emoji_list.pkl', 'wb') as f:
+	pickle.dump(pred_emoji_list, f)
