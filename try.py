@@ -15,8 +15,9 @@ sentence = "Mom deserves a Getaway. Happy Mothers Day"
 sentence_words = sentence.split(" ")
 wvecs = []
 for word in sentence_words:
-	vector = w2v[word]
-	wvecs.append(vector)
+	if word in w2v.vocab:
+		vector = w2v[word]
+		wvecs.append(vector)
 
 for wvec in wvecs:
 	print(e2v.similar_by_vector(wvec,topn=2))
