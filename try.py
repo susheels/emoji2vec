@@ -12,7 +12,8 @@ w2v = gsm.KeyedVectors.load_word2vec_format(PATH_word2vec, binary=True)
 
 
 # load sentence
-sentence = "Mom deserves a Getaway. Happy Mothers Day"
+sentence = "Movies, food and fun with OpenOut this weekend!"
+
 sentence_words = sentence.split(" ")
 wvecs = []
 for word in sentence_words:
@@ -26,3 +27,6 @@ for wvec in wvecs:
 
 with open('pred_emoji_list.pkl', 'wb') as f:
 	pickle.dump(pred_emoji_list, f)
+
+with open("file.txt", "w",encoding='utf-8') as output:
+    output.write(str(pred_emoji_list))
