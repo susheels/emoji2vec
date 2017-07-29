@@ -19,9 +19,9 @@ for word in sentence_words:
 	wvecs.append(vector)
 
 
-def getSimilar(wvecs,e2v):
-	for wvec in wvecs:
-		print(e2v.similar_by_vector(wvec,topn=2)
+
+for wvec in wvecs:
+	print(e2v.similar_by_vector(wvec,topn=2)
 				
-getSimilar(wvecs,e2v)
+
 
