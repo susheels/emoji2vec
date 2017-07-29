@@ -1,7 +1,7 @@
 import gensim.models as gsm
-
-PATH_emoji2vec = ""
-PATH_word2vec = ""
+import sklearn as sk
+PATH_emoji2vec = "/home/susuresh/emoji2vec/pre-trained/emoji2vec.bin"
+PATH_word2vec = "/home/susuresh/Downloads/GoogleNews-vectors-negative300.bin.gz"
 
 # load all emoji vectors from emoji2vec
 e2v = gsm.KeyedVectors.load_word2vec_format(PATH_emoji2vec, binary=True)
@@ -19,8 +19,9 @@ for word in sentence_words:
 	wvecs.append(vector)
 
 
-
-
-
-# for all word vectors get cosine distance w.r.t emoji vectors
+def getSimilar(wvecs,e2v):
+	for wvec in wvecs:
+		print e2v.similar_by_vector(wvec,topn=2)
+				
+getSimilar(wvecs,e2v)
 
