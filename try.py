@@ -10,7 +10,7 @@ e2v = gsm.KeyedVectors.load_word2vec_format(PATH_emoji2vec, binary=True)
 # load all word vectors from word2vec 
 w2v = gsm.KeyedVectors.load_word2vec_format(PATH_word2vec, binary=True)
 
-
+print("Loading vectors done")
 # load sentence
 sentence = "Start creating mobile apps with your favourite adobe products"
 
